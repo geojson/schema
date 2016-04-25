@@ -1,0 +1,8 @@
+{
+  "name": "geojson-schema",
+  "version": "0.0.0",
+  "devDependencies": {
+    "fs-promise": "^0.5.0",
+    "json-schema-deref-sync": "^0.3.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "title": "GeoJSON Point",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["Point"]
+    },
+    "coordinates": {
+      "$ref": "ref/PointCoordinates.json"
+    }
+  }
+}
