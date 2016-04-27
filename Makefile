@@ -20,6 +20,10 @@ $(BUILD_SCHEMA): $(SRC_SCHEMA) node_modules/.install
 	@mkdir -p $(dir $@)
 	@deref $(patsubst $(BUILD_DIR)/%,$(SRC_DIR)/%,./$@) > $@
 
+.PHONY: test
+test: $(BUILD_SCHEMA)
+	@node test/test.js
+
 .PHONY: clean
 clean:
 	@rm -rf $(BUILD_DIR)

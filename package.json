@@ -1,8 +1,13 @@
 {
   "name": "geojson-schema",
   "version": "0.0.0",
+  "scripts": {
+    "test": "make test"
+  },
   "devDependencies": {
+    "ajv": "^4.0.4",
     "fs-promise": "^0.5.0",
+    "globby": "^4.0.0",
     "json-schema-deref-sync": "^0.3.0"
   }
 }
