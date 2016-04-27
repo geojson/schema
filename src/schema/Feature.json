@@ -1,0 +1,25 @@
+{
+  "title": "GeoJSON Feature",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "emum": ["Feature"]
+    },
+    "properties": {
+      "type": "object"
+    },
+    "geometry": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "Point.json"},
+        {"$ref": "LineString.json"},
+        {"$ref": "Polygon.json"},
+        {"$ref": "MultiPoint.json"},
+        {"$ref": "MultiLineString.json"},
+        {"$ref": "MultiPolygon.json"},
+        {"$ref": "GeometryCollection.json"}
+      ]
+    }
+  }
+}
