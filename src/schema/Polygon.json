@@ -1,0 +1,13 @@
+{
+  "title": "GeoJSON Polygon",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["Polygon"]
+    },
+    "coordinates": {
+      "$ref": "ref/PolygonCoordinates.json"
+    }
+  }
+}

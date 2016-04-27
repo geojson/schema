@@ -2,6 +2,6 @@
   "type": "array",
   "minItems": 2,
   "items": {
-    "type": "number"
+    "$ref": "PointCoordinates.json"
   }
 }

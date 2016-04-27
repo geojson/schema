@@ -1,0 +1,13 @@
+{
+  "title": "GeoJSON LineString",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["LineString"]
+    },
+    "coordinates": {
+      "$ref": "ref/LineStringCoordinates.json"
+    }
+  }
+}
