@@ -15,9 +15,9 @@ with the resolved schema.  The resulting dereferenced schema is written to
 stdout.
 `;
 
-function derefSchema(name, schema) {
+function derefSchema(input, schema) {
   const dereferenced = deref(schema, {
-    baseFolder: schemaRoot,
+    baseFolder: path.dirname(input),
     failOnMissing: true
   });
   if (dereferenced instanceof Error) {
@@ -25,20 +25,19 @@ function derefSchema(name, schema) {
   }
   Object.assign(dereferenced, {
     $schema: 'http://json-schema.org/draft-04/schema#',
-    id: `${baseURL}${name}`
+    id: `${baseURL}${path.basename(input)}`
   });
   return dereferenced;
 }
 
 if (require.main === module) {
-  const input = path.resolve(process.argv[2]);
-  if (!input) {
+  if (!process.argv[2]) {
     process.stderr.write(usage);
     process.exit(1);
   }
-  const name = path.relative(schemaRoot, input);
+  const input = path.resolve(process.argv[2]);
   fsp.readJson(input)
-    .then(json => derefSchema(name, json))
+    .then(json => derefSchema(input, json))
     .then(schema => process.stdout.write(JSON.stringify(schema, null, 2) + '\n'))
     .catch(err => {
       process.stderr.write(`Failed to process ${input}: ${err.message}\n`);

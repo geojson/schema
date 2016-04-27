@@ -4,7 +4,7 @@ export PATH := ./bin/:$(PATH)
 BUILD_DIR := ./build
 SRC_DIR := ./src/schema
 
-SRC_SCHEMA := $(shell find $(SRC_DIR) -name '*.json')
+SRC_SCHEMA := $(shell ls $(SRC_DIR)/*.json)
 BUILD_SCHEMA := $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(SRC_SCHEMA))
 
 .PHONY: all
