@@ -2,13 +2,18 @@
   "name": "geojson-schema",
   "version": "0.0.0",
   "scripts": {
+    "pretest": "make lint",
     "test": "make test"
   },
   "devDependencies": {
     "ajv": "^4.0.4",
     "co": "^4.6.0",
+    "eslint": "^2.8.0",
+    "eslint-config-tschaub": "^4.0.0",
     "fs-promise": "^0.5.0",
-    "globby": "^4.0.0",
-    "json-schema-deref-sync": "^0.3.0"
+    "globby": "^4.0.0"
+  },
+  "eslintConfig": {
+    "extends": "tschaub"
   }
 }
