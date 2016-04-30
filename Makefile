@@ -30,7 +30,7 @@ test: $(BUILD_SCHEMA) lint
 
 .PHONY: lint
 lint: $(ALL_JS) node_modules/.install
-	@eslint $(SRC_DIR) $(BIN_DIR);
+	@eslint $(ALL_JS);
 
 .PHONY: clean
 clean:
