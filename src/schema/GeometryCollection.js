@@ -9,6 +9,10 @@ var BoundingBox = require('./ref/BoundingBox');
 module.exports = {
   title: 'GeoJSON GeometryCollection',
   type: 'object',
+  required: [
+    'type',
+    'geometries'
+  ],
   properties: {
     type: {
       type: 'string',

@@ -4,6 +4,10 @@ var BoundingBox = require('./ref/BoundingBox');
 module.exports = {
   title: 'GeoJSON LineString',
   type: 'object',
+  required: [
+    'type',
+    'coordinates'
+  ],
   properties: {
     type: {
       type: 'string',
