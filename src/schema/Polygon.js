@@ -1,4 +1,5 @@
 var PolygonCoordinates = require('./ref/PolygonCoordinates');
+var BoundingBox = require('./ref/BoundingBox');
 
 module.exports = {
   title: 'GeoJSON Polygon',
@@ -8,6 +9,7 @@ module.exports = {
       type: 'string',
       enum: ['Polygon']
     },
-    coordinates: PolygonCoordinates
+    coordinates: PolygonCoordinates,
+    bbox: BoundingBox
   }
 };

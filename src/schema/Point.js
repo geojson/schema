@@ -1,4 +1,5 @@
 var PointCoordinates = require('./ref/PointCoordinates');
+var BoundingBox = require('./ref/BoundingBox');
 
 module.exports = {
   title: 'GeoJSON Point',
@@ -12,6 +13,7 @@ module.exports = {
       type: 'string',
       enum: ['Point']
     },
-    coordinates: PointCoordinates
+    coordinates: PointCoordinates,
+    bbox: BoundingBox
   }
 };

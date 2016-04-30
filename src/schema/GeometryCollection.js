@@ -4,6 +4,7 @@ var Polygon = require('./Polygon');
 var MultiPoint = require('./MultiPoint');
 var MultiLineString = require('./MultiLineString');
 var MultiPolygon = require('./MultiPolygon');
+var BoundingBox = require('./ref/BoundingBox');
 
 module.exports = {
   title: 'GeoJSON GeometryCollection',
@@ -25,6 +26,7 @@ module.exports = {
           MultiPolygon
         ]
       }
-    }
+    },
+    bbox: BoundingBox
   }
 };
