@@ -3,6 +3,7 @@ const assert = require('./assert');
 assert.valid('Point.json', 'valid/point/**/*.json');
 assert.valid('LineString.json', 'valid/linestring/**/*.json');
 assert.valid('Polygon.json', 'valid/polygon/**/*.json');
+assert.valid('MultiPoint.json', 'valid/multipoint/**/*.json');
 assert.valid('GeoJSON.json', 'valid/**/*.json');
 
 assert.invalid('Point.json', 'invalid/**/*.json');
