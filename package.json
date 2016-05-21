@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "pretest": "make lint",
-    "test": "make test"
+    "test": "make test",
+    "start": "nodemon --exec 'make test || exit 1' --watch test"
   },
   "devDependencies": {
     "ajv": "^4.0.4",
@@ -11,7 +12,8 @@
     "eslint": "^2.8.0",
     "eslint-config-tschaub": "^4.0.0",
     "fs-promise": "^0.5.0",
-    "globby": "^4.0.0"
+    "globby": "^4.0.0",
+    "nodemon": "^1.9.2"
   },
   "eslintConfig": {
     "extends": "tschaub"
