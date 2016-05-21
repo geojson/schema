@@ -5,6 +5,7 @@ assert.valid('LineString.json', 'valid/linestring/**/*.json');
 assert.valid('Polygon.json', 'valid/polygon/**/*.json');
 assert.valid('MultiPoint.json', 'valid/multipoint/**/*.json');
 assert.valid('MultiLineString.json', 'valid/multilinestring/**/*.json');
+assert.valid('MultiPolygon.json', 'valid/multipolygon/**/*.json');
 assert.valid('GeoJSON.json', 'valid/**/*.json');
 
 assert.invalid('Point.json', 'invalid/**/*.json');
