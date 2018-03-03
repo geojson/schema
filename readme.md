@@ -1,6 +1,6 @@
 # GeoJSON Schema
 
-This repository provides tools for building JSONSchema docs for GeoJSON.  A schema is generated for each of the GeoJSON object types, and each individual doc is complete (without `$ref`s to other documents).  So applications can consume just what they need and avoid extra fetching.
+This repository provides tools for building [JSON Schema](http://json-schema.org/) docs for [GeoJSON](http://geojson.org/).  A schema is generated for each of the GeoJSON object types, and each individual doc is complete (without `$ref`s to other documents).  So applications can consume just what they need and avoid extra fetching.
 
 See JSON Schema docs for the GeoJSON types below:
  * [`FeatureCollection`](http://geojson.org/schema/FeatureCollection.json)
