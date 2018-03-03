@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-'use strict'
+'use strict';
 
 const path = require('path');
 
-const baseURL = 'http://geojson.org/schema/'
+const baseURL = 'http://geojson.org/schema/';
 const command = path.basename(process.argv[1]);
 const usage = `${command} <input>
 
@@ -27,9 +27,12 @@ if (require.main === module) {
   } catch (err) {
     fail(`Failed to import ${input}: ${err.message}\n`);
   }
-  const schema = Object.assign({}, json, {
-    $schema: 'http://json-schema.org/draft-04/schema#',
-    id: `${baseURL}${path.basename(input)}`
-  });
+  const schema = Object.assign(
+    {
+      $schema: 'http://json-schema.org/draft-07/schema#',
+      $id: `${baseURL}${path.basename(input)}on`
+    },
+    json
+  );
   process.stdout.write(JSON.stringify(schema, null, 2) + '\n');
 }

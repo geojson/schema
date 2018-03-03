@@ -4,10 +4,7 @@ var BoundingBox = require('./ref/BoundingBox');
 module.exports = {
   title: 'GeoJSON MultiPoint',
   type: 'object',
-  required: [
-    'type',
-    'coordinates'
-  ],
+  required: ['type', 'coordinates'],
   properties: {
     type: {
       type: 'string',
