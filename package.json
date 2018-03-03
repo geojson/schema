@@ -1,6 +1,12 @@
 {
-  "name": "geojson-schema",
+  "name": "geojson-schema-builder",
   "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geojson/schema.git"
+  },
+  "license": "MIT",
   "scripts": {
     "pretest": "make lint",
     "test": "make test",
