@@ -17,7 +17,7 @@
     "eslint": "^4.18.2",
     "eslint-config-tschaub": "^9.0.0",
     "globby": "^8.0.1",
-    "nodemon": "^1.17.1"
+    "nodemon": "^1.17.5"
   },
   "eslintConfig": {
     "extends": "tschaub"

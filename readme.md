@@ -5,6 +5,7 @@ This repository provides tools for building [JSON Schema](http://json-schema.org
 See JSON Schema docs for the GeoJSON types below:
  * [`FeatureCollection`](http://geojson.org/schema/FeatureCollection.json)
  * [`Feature`](http://geojson.org/schema/Feature.json)
+ * [`Geometry`](http://geojson.org/schema/Geometry.json)
  * [`GeometryCollection`](http://geojson.org/schema/GeometryCollection.json)
  * [`MultiPolygon`](http://geojson.org/schema/MultiPolygon.json)
  * [`MultiLineString`](http://geojson.org/schema/MultiLineString.json)
