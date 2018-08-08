@@ -14,7 +14,7 @@ module.exports = {
   properties: {
     type: {
       type: 'string',
-      emum: ['Feature']
+      enum: ['Feature']
     },
     properties: {
       type: 'object'

@@ -8,7 +8,7 @@ module.exports = {
   properties: {
     type: {
       type: 'string',
-      emum: ['FeatureCollection']
+      enum: ['FeatureCollection']
     },
     features: {
       type: 'array',
