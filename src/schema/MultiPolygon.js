@@ -1,5 +1,5 @@
-var PolygonCoordinates = require('./ref/PolygonCoordinates');
-var BoundingBox = require('./ref/BoundingBox');
+const PolygonCoordinates = require('./ref/PolygonCoordinates');
+const BoundingBox = require('./ref/BoundingBox');
 
 module.exports = {
   title: 'GeoJSON MultiPolygon',

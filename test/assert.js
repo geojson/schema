@@ -21,7 +21,9 @@ const schemaDir = path.join(__dirname, '..', 'build');
 function reportErrors(schemaName, fixtureName, errors) {
   let message = `${fixtureName}:\n`;
   for (const error of errors) {
-    message += `  ${error.dataPath} ${error.message} (${schemaName}${error.schemaPath})\n`;
+    message += `  ${error.dataPath} ${error.message} (${schemaName}${
+      error.schemaPath
+    })\n`;
   }
   process.stderr.write(message);
   process.exit(1);

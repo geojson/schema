@@ -1,5 +1,5 @@
-var Feature = require('./Feature');
-var BoundingBox = require('./ref/BoundingBox');
+const Feature = require('./Feature');
+const BoundingBox = require('./ref/BoundingBox');
 
 module.exports = {
   title: 'GeoJSON FeatureCollection',

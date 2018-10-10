@@ -22,7 +22,7 @@ node_modules/.install: package.json
 # Build all schema
 $(BUILD_SCHEMA): $(SRC_SCHEMA) node_modules/.install
 	@mkdir -p $(dir $@)
-	@format $(patsubst $(BUILD_DIR)/%.json,$(SCHEMA_DIR)/%.js,./$@) > $@
+	@format.js $(patsubst $(BUILD_DIR)/%.json,$(SCHEMA_DIR)/%.js,./$@) > $@
 
 .PHONY: test
 test: $(BUILD_SCHEMA) lint

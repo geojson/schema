@@ -1,5 +1,5 @@
-var PointCoordinates = require('./ref/PointCoordinates');
-var BoundingBox = require('./ref/BoundingBox');
+const PointCoordinates = require('./ref/PointCoordinates');
+const BoundingBox = require('./ref/BoundingBox');
 
 module.exports = {
   title: 'GeoJSON MultiPoint',

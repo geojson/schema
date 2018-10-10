@@ -1,4 +1,4 @@
-var LinearRingCoordinates = require('./LinearRingCoordinates');
+const LinearRingCoordinates = require('./LinearRingCoordinates');
 
 module.exports = {
   type: 'array',
