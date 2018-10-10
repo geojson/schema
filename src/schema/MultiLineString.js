@@ -1,5 +1,5 @@
-var LineStringCoordinates = require('./ref/LineStringCoordinates');
-var BoundingBox = require('./ref/BoundingBox');
+const LineStringCoordinates = require('./ref/LineStringCoordinates');
+const BoundingBox = require('./ref/BoundingBox');
 
 module.exports = {
   title: 'GeoJSON MultiLineString',

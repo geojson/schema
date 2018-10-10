@@ -1,4 +1,4 @@
-var PointCoordinates = require('./PointCoordinates');
+const PointCoordinates = require('./PointCoordinates');
 
 module.exports = {
   type: 'array',
