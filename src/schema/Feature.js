@@ -17,7 +17,7 @@ module.exports = {
       enum: ['Feature']
     },
     properties: {
-      type: 'object'
+      oneOf: [{type: 'null'}, {type: 'object'}]
     },
     geometry: {
       oneOf: [
