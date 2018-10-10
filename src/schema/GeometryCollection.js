@@ -13,7 +13,7 @@ module.exports = {
   properties: {
     type: {
       type: 'string',
-      emum: ['GeometryCollection']
+      enum: ['GeometryCollection']
     },
     geometries: {
       type: 'array',
