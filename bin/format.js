@@ -3,7 +3,7 @@
 
 const path = require('path');
 
-const baseURL = 'http://geojson.org/schema/';
+const baseURL = 'https://geojson.org/schema/';
 const command = path.basename(process.argv[1]);
 const usage = `${command} <input>
 
