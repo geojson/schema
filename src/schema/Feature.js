@@ -16,6 +16,9 @@ module.exports = {
       type: 'string',
       enum: ['Feature']
     },
+    id: {
+      oneOf: [{type: 'number'}, {type: 'string'}]
+    },
     properties: {
       oneOf: [{type: 'null'}, {type: 'object'}]
     },
