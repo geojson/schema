@@ -24,6 +24,6 @@ The output will be in the `build` directory.
 
 # deploy
 
-A Travis CI job builds commits pushed to `master`.  After a successful build, artifacts are pushed to the `gh-pages` branch and will be acessible at geojson.org/schema/<name>.json (e.g. http://geojson.org/schema/Point.json).
+A Travis CI job builds commits pushed to `master`.  After a successful build, artifacts are pushed to the `gh-pages` branch and will be accessible at geojson.org/schema/<name>.json (e.g. http://geojson.org/schema/Point.json).
 
 [![Build Status](https://travis-ci.org/geojson/schema.svg?branch=master)](https://travis-ci.org/geojson/schema)
