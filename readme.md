@@ -17,15 +17,21 @@ See JSON Schema docs for the GeoJSON types below:
 The overall GeoJSON schema can be found at
  * [`GeoJSON`](http://geojson.org/schema/GeoJSON.json)
 
-# build
+## Limitations
+
+The schema can not be used to validate that linear rings are closed or that they follow the right-hand rule.  These two elements of the [GeoJSON specification](https://datatracker.ietf.org/doc/html/rfc7946) cannot be represented in JSON Schema.  To enforce these two elements of linear ring validation, parsers must implement their own logic on top of JSON Schema validation.
+
+# Development
+
+Install dependencies:
+
+    npm install
 
 To build the schema docs:
 
     make
 
 The output will be in the `build` directory.
-
-# deploy
 
 A CI job builds commits pushed to `main`.  After a successful build, artifacts are pushed to the `gh-pages` branch and will be accessible at geojson.org/schema/<name>.json (e.g. http://geojson.org/schema/Point.json).
 
