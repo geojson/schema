@@ -1,7 +1,7 @@
-const LineStringCoordinates = require('./ref/LineStringCoordinates');
-const BoundingBox = require('./ref/BoundingBox');
+import LineStringCoordinates from './ref/LineStringCoordinates.js';
+import BoundingBox from './ref/BoundingBox.js';
 
-module.exports = {
+export default {
   title: 'GeoJSON LineString',
   type: 'object',
   required: ['type', 'coordinates'],

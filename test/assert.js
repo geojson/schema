@@ -1,12 +1,9 @@
-'use strict';
-
-const Ajv = require('ajv');
-const fs = require('fs');
-const promisify = require('util').promisify;
-const globby = require('globby');
-const path = require('path');
-
-const ajv = new Ajv({allErrors: true, verbose: true});
+import Ajv from 'ajv';
+import fs from 'fs';
+import {promisify} from 'util';
+import {globby} from 'globby';
+import path from 'path';
+import {fileURLToPath} from 'url';
 
 const readFile = promisify(fs.readFile);
 
@@ -15,15 +12,15 @@ async function readJson(file) {
   return JSON.parse(data);
 }
 
-const fixturesDir = path.join(__dirname, 'fixtures');
-const schemaDir = path.join(__dirname, '..', 'build');
+const baseDir = path.dirname(fileURLToPath(import.meta.url));
+
+const fixturesDir = path.join(baseDir, 'fixtures');
+const schemaDir = path.join(baseDir, '..', 'build');
 
 function reportErrors(schemaName, fixtureName, errors) {
   let message = `${fixtureName}:\n`;
   for (const error of errors) {
-    message += `  ${error.dataPath} ${error.message} (${schemaName}${
-      error.schemaPath
-    })\n`;
+    message += `  ${error.dataPath} ${error.message} (${schemaName}${error.schemaPath})\n`;
   }
   process.stderr.write(message);
   process.exit(1);
@@ -35,7 +32,15 @@ function fatal(err) {
 }
 
 async function assertValidity(validity, schemaName, fixturePattern) {
-  const validate = ajv.compile(require(path.join(schemaDir, schemaName)));
+  const ajv = new Ajv({allErrors: true, verbose: true});
+  const schemaPath = path.join(schemaDir, schemaName);
+  const schema = await readJson(schemaPath);
+  let validate;
+  try {
+    validate = ajv.compile(schema);
+  } catch (err) {
+    throw new Error(`Error compiling schema ${schemaPath}: ${err.message}`);
+  }
   const paths = await globby(fixturePattern, {cwd: fixturesDir});
   for (const fixtureName of paths) {
     const fixture = await readJson(path.join(fixturesDir, fixtureName));
@@ -50,10 +55,10 @@ async function assertValidity(validity, schemaName, fixturePattern) {
   }
 }
 
-exports.valid = (schemaName, fixturePattern) => {
+export function valid(schemaName, fixturePattern) {
   assertValidity(true, schemaName, fixturePattern).catch(fatal);
-};
+}
 
-exports.invalid = (schemaName, fixturePattern) => {
+export function invalid(schemaName, fixturePattern) {
   assertValidity(false, schemaName, fixturePattern).catch(fatal);
-};
+}
