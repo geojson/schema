@@ -1,0 +1,9 @@
+{
+  "id": "ABC",
+  "type": "Feature",
+  "properties": {},
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": []
+  }
+}
