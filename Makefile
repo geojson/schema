@@ -9,6 +9,7 @@ export PATH := $(BIN_DIR):./node_modules/.bin/:$(PATH)
 
 SRC_SCHEMA := $(shell ls $(SCHEMA_DIR)/*.js)
 BUILD_SCHEMA := $(patsubst $(SCHEMA_DIR)/%.js,$(BUILD_DIR)/%.json,$(SRC_SCHEMA))
+AVRO := $(patsubst $(SCHEMA_DIR)/%.js,$(BUILD_DIR)/avro/%.json,$(SRC_SCHEMA))
 ALL_JS := $(shell find $(SRC_DIR) -type f -name '*.js') $(shell ls $(BIN_DIR)/*)
 
 .PHONY: build
@@ -23,6 +24,14 @@ node_modules/.install: package.json
 $(BUILD_SCHEMA): $(SRC_SCHEMA) node_modules/.install
 	@mkdir -p $(dir $@)
 	@format.js $(patsubst $(BUILD_DIR)/%.json,$(SCHEMA_DIR)/%.js,./$@) > $@
+
+.PHONY: avro
+avro: $(AVRO)
+
+# Build the Avro schema
+$(AVRO): $(BUILD_SCHEMA)
+	@mkdir -p $(dir $@)
+	@avro.js $(patsubst $(BUILD_DIR)/avro/%.json,$(BUILD_DIR)/%.json,./$@) > $@
 
 .PHONY: test
 test: $(BUILD_SCHEMA) lint
