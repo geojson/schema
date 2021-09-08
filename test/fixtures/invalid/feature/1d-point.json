@@ -1,0 +1,13 @@
+{
+  "id": "ABC",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -122.308150179
+    ]
+  },
+  "properties": {
+    "name": "Dinagat Islands"
+  }
+}
