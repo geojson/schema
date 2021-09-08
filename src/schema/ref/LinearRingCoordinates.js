@@ -1,6 +1,6 @@
-const PointCoordinates = require('./PointCoordinates');
+import PointCoordinates from './PointCoordinates.js';
 
-module.exports = {
+export default {
   type: 'array',
   minItems: 4,
   items: PointCoordinates

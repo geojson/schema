@@ -1,7 +1,7 @@
-const PolygonCoordinates = require('./ref/PolygonCoordinates');
-const BoundingBox = require('./ref/BoundingBox');
+import PolygonCoordinates from './ref/PolygonCoordinates.js';
+import BoundingBox from './ref/BoundingBox.js';
 
-module.exports = {
+export default {
   title: 'GeoJSON MultiPolygon',
   type: 'object',
   required: ['type', 'coordinates'],

@@ -1,38 +1,42 @@
 #!/usr/bin/env node
-'use strict';
+import path from 'path';
 
-const path = require('path');
+async function main() {
+  const baseURL = 'https://geojson.org/schema/';
+  const command = path.basename(process.argv[1]);
+  const usage = `${command} <input>
 
-const baseURL = 'https://geojson.org/schema/';
-const command = path.basename(process.argv[1]);
-const usage = `${command} <input>
+  Provided the path to a schema module (e.g. src/schema/Point.js), ${command}
+  will write the formatted JSON schema to stdout.
+  `;
 
-Provided the path to a schema module (e.g. src/schema/Point.js), ${command}
-will write the formatted JSON schema to stdout.
-`;
-
-function fail(message) {
-  process.stderr.write(message);
-  process.exit(1);
-}
-
-if (require.main === module) {
   if (!process.argv[2]) {
-    fail(usage);
+    throw new Error(usage);
   }
+
   const input = path.resolve(process.argv[2]);
-  let json;
+
+  let schema;
   try {
-    json = require(input);
+    const mod = await import(input);
+    schema = mod.default;
   } catch (err) {
-    fail(`Failed to import ${input}: ${err.message}\n`);
+    throw new Error(`Failed to import ${input}: ${err.message}\n`);
   }
-  const schema = Object.assign(
+
+  return Object.assign(
     {
       $schema: 'http://json-schema.org/draft-07/schema#',
       $id: `${baseURL}${path.basename(input)}on`
     },
-    json
+    schema
   );
-  process.stdout.write(JSON.stringify(schema, null, 2) + '\n');
 }
+
+main()
+  .then(schema => {
+    process.stdout.write(JSON.stringify(schema, null, 2) + '\n');
+  })
+  .catch(err => {
+    process.stderr.write(err.message + '\n', () => process.exit(1));
+  });

@@ -11,8 +11,8 @@ SRC_SCHEMA := $(shell ls $(SCHEMA_DIR)/*.js)
 BUILD_SCHEMA := $(patsubst $(SCHEMA_DIR)/%.js,$(BUILD_DIR)/%.json,$(SRC_SCHEMA))
 ALL_JS := $(shell find $(SRC_DIR) -type f -name '*.js') $(shell ls $(BIN_DIR)/*)
 
-.PHONY: all
-all: $(BUILD_SCHEMA)
+.PHONY: build
+build: $(BUILD_SCHEMA)
 
 # Install dependencies
 node_modules/.install: package.json

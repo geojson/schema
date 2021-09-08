@@ -1,7 +1,7 @@
-const Feature = require('./Feature');
-const BoundingBox = require('./ref/BoundingBox');
+import Feature from './Feature.js';
+import BoundingBox from './ref/BoundingBox.js';
 
-module.exports = {
+export default {
   title: 'GeoJSON FeatureCollection',
   type: 'object',
   required: ['type', 'features'],

@@ -1,11 +1,11 @@
-const Point = require('./Point');
-const LineString = require('./LineString');
-const Polygon = require('./Polygon');
-const MultiPoint = require('./MultiPoint');
-const MultiLineString = require('./MultiLineString');
-const MultiPolygon = require('./MultiPolygon');
+import Point from './Point.js';
+import LineString from './LineString.js';
+import Polygon from './Polygon.js';
+import MultiPoint from './MultiPoint.js';
+import MultiLineString from './MultiLineString.js';
+import MultiPolygon from './MultiPolygon.js';
 
-module.exports = {
+export default {
   title: 'GeoJSON Geometry',
   oneOf: [Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon]
 };

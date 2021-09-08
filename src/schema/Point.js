@@ -1,7 +1,7 @@
-const PointCoordinates = require('./ref/PointCoordinates');
-const BoundingBox = require('./ref/BoundingBox');
+import PointCoordinates from './ref/PointCoordinates.js';
+import BoundingBox from './ref/BoundingBox.js';
 
-module.exports = {
+export default {
   title: 'GeoJSON Point',
   type: 'object',
   required: ['type', 'coordinates'],

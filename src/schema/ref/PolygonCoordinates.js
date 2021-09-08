@@ -1,6 +1,6 @@
-const LinearRingCoordinates = require('./LinearRingCoordinates');
+import LinearRingCoordinates from './LinearRingCoordinates.js';
 
-module.exports = {
+export default {
   type: 'array',
   items: LinearRingCoordinates
 };

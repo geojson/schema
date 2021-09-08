@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   type: 'array',
   minItems: 2,
   items: {
