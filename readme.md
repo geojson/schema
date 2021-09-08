@@ -14,6 +14,9 @@ See JSON Schema docs for the GeoJSON types below:
  * [`LineString`](http://geojson.org/schema/LineString.json)
  * [`Point`](http://geojson.org/schema/Point.json)
 
+The overall GeoJSON schema can be found at
+ * [`GeoJSON`](http://geojson.org/schema/GeoJSON.json)
+
 # build
 
 To build the schema docs:
