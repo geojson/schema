@@ -12,7 +12,7 @@ BUILD_SCHEMA := $(patsubst $(SCHEMA_DIR)/%.js,$(BUILD_DIR)/%.json,$(SRC_SCHEMA))
 ALL_JS := $(shell find $(SRC_DIR) -type f -name '*.js') $(shell ls $(BIN_DIR)/*)
 
 .PHONY: build
-build: $(BUILD_SCHEMA) $(BUILD_DIR)/package.json
+build: $(BUILD_SCHEMA) $(BUILD_DIR)/package.json $(BUILD_DIR)/readme.md
 
 # Install dependencies
 node_modules/.install: package.json
@@ -27,6 +27,10 @@ $(BUILD_SCHEMA): $(SRC_SCHEMA) node_modules/.install
 $(BUILD_DIR)/package.json: package.json node_modules/.install
 	@mkdir -p $(dir $@)
 	@transform-package-json.js package.json > $@
+
+$(BUILD_DIR)/readme.md: readme.md
+	@mkdir -p $(dir $@)
+	@cp readme.md $@
 
 .PHONY: test
 test: build lint
