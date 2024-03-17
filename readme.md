@@ -41,7 +41,7 @@ A CI job builds commits pushed to `main`.  After a successful build, artifacts a
 
 To publish the `geojson-schema` package, run the following:
 
-    make build
     npm version minor # or major or patch
+    make build
     git push --tags origin main
     pushd build && npm publish && popd
