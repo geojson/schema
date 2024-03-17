@@ -35,7 +35,7 @@ The output will be in the `build` directory.
 
 A CI job builds commits pushed to `main`.  After a successful build, artifacts are pushed to the `gh-pages` branch and will be accessible at geojson.org/schema/<name>.json (e.g. https://geojson.org/schema/Point.json).
 
-[![Build Status](https://github.com/geojson/schema/workflows/Deploy/badge.svg)](https://github.com/geojson/schema/actions?workflow=Deploy)
+![Status](https://github.com/geojson/schema/workflows/test.yml/badge.svg)
 
 # Publishing
 
