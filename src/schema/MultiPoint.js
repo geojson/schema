@@ -1,5 +1,5 @@
-import PointCoordinates from './ref/PointCoordinates.js';
 import BoundingBox from './ref/BoundingBox.js';
+import PointCoordinates from './ref/PointCoordinates.js';
 
 export default {
   title: 'GeoJSON MultiPoint',
@@ -8,12 +8,12 @@ export default {
   properties: {
     type: {
       type: 'string',
-      enum: ['MultiPoint']
+      enum: ['MultiPoint'],
     },
     coordinates: {
       type: 'array',
-      items: PointCoordinates
+      items: PointCoordinates,
     },
-    bbox: BoundingBox
-  }
+    bbox: BoundingBox,
+  },
 };

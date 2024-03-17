@@ -32,6 +32,10 @@ test: $(BUILD_SCHEMA) lint
 lint: $(ALL_JS) node_modules/.install
 	@eslint $(ALL_JS);
 
+.PHONY: lint-fix
+lint-fix: $(ALL_JS) node_modules/.install
+	@eslint --fix $(ALL_JS);
+
 .PHONY: clean
 clean:
 	@rm -rf $(BUILD_DIR)

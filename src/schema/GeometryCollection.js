@@ -1,10 +1,10 @@
-import Point from './Point.js';
-import LineString from './LineString.js';
-import Polygon from './Polygon.js';
-import MultiPoint from './MultiPoint.js';
-import MultiLineString from './MultiLineString.js';
-import MultiPolygon from './MultiPolygon.js';
 import BoundingBox from './ref/BoundingBox.js';
+import LineString from './LineString.js';
+import MultiLineString from './MultiLineString.js';
+import MultiPoint from './MultiPoint.js';
+import MultiPolygon from './MultiPolygon.js';
+import Point from './Point.js';
+import Polygon from './Polygon.js';
 
 export default {
   title: 'GeoJSON GeometryCollection',
@@ -13,7 +13,7 @@ export default {
   properties: {
     type: {
       type: 'string',
-      enum: ['GeometryCollection']
+      enum: ['GeometryCollection'],
     },
     geometries: {
       type: 'array',
@@ -24,10 +24,10 @@ export default {
           Polygon,
           MultiPoint,
           MultiLineString,
-          MultiPolygon
-        ]
-      }
+          MultiPolygon,
+        ],
+      },
     },
-    bbox: BoundingBox
-  }
+    bbox: BoundingBox,
+  },
 };

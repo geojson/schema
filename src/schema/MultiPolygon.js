@@ -1,5 +1,5 @@
-import PolygonCoordinates from './ref/PolygonCoordinates.js';
 import BoundingBox from './ref/BoundingBox.js';
+import PolygonCoordinates from './ref/PolygonCoordinates.js';
 
 export default {
   title: 'GeoJSON MultiPolygon',
@@ -8,12 +8,12 @@ export default {
   properties: {
     type: {
       type: 'string',
-      enum: ['MultiPolygon']
+      enum: ['MultiPolygon'],
     },
     coordinates: {
       type: 'array',
-      items: PolygonCoordinates
+      items: PolygonCoordinates,
     },
-    bbox: BoundingBox
-  }
+    bbox: BoundingBox,
+  },
 };
