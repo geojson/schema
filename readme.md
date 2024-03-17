@@ -36,3 +36,12 @@ The output will be in the `build` directory.
 A CI job builds commits pushed to `main`.  After a successful build, artifacts are pushed to the `gh-pages` branch and will be accessible at geojson.org/schema/<name>.json (e.g. https://geojson.org/schema/Point.json).
 
 [![Build Status](https://github.com/geojson/schema/workflows/Deploy/badge.svg)](https://github.com/geojson/schema/actions?workflow=Deploy)
+
+# Publishing
+
+To publish the `geojson-schema` package, run the following:
+
+    make build
+    npm version minor # or major or patch
+    git push --tags origin main
+    pushd build && npm publish && popd
