@@ -1,5 +1,5 @@
-import LineStringCoordinates from './ref/LineStringCoordinates.js';
 import BoundingBox from './ref/BoundingBox.js';
+import LineStringCoordinates from './ref/LineStringCoordinates.js';
 
 export default {
   title: 'GeoJSON MultiLineString',
@@ -8,12 +8,12 @@ export default {
   properties: {
     type: {
       type: 'string',
-      enum: ['MultiLineString']
+      enum: ['MultiLineString'],
     },
     coordinates: {
       type: 'array',
-      items: LineStringCoordinates
+      items: LineStringCoordinates,
     },
-    bbox: BoundingBox
-  }
+    bbox: BoundingBox,
+  },
 };

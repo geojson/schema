@@ -27,16 +27,16 @@ async function main() {
   return Object.assign(
     {
       $schema: 'http://json-schema.org/draft-07/schema#',
-      $id: `${baseURL}${path.basename(input)}on`
+      $id: `${baseURL}${path.basename(input)}on`,
     },
     schema
   );
 }
 
 main()
-  .then(schema => {
+  .then((schema) => {
     process.stdout.write(JSON.stringify(schema, null, 2) + '\n');
   })
-  .catch(err => {
+  .catch((err) => {
     process.stderr.write(err.message + '\n', () => process.exit(1));
   });

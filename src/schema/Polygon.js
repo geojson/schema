@@ -1,5 +1,5 @@
-import PolygonCoordinates from './ref/PolygonCoordinates.js';
 import BoundingBox from './ref/BoundingBox.js';
+import PolygonCoordinates from './ref/PolygonCoordinates.js';
 
 export default {
   title: 'GeoJSON Polygon',
@@ -8,9 +8,9 @@ export default {
   properties: {
     type: {
       type: 'string',
-      enum: ['Polygon']
+      enum: ['Polygon'],
     },
     coordinates: PolygonCoordinates,
-    bbox: BoundingBox
-  }
+    bbox: BoundingBox,
+  },
 };

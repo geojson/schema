@@ -9,9 +9,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Clone Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
-          cache: 'npm'
-      - run: make test
+          node-version: '20'
+
+      - name: Run Tests
+        run: make test

@@ -1,5 +1,5 @@
-import Feature from './Feature.js';
 import BoundingBox from './ref/BoundingBox.js';
+import Feature from './Feature.js';
 
 export default {
   title: 'GeoJSON FeatureCollection',
@@ -8,12 +8,12 @@ export default {
   properties: {
     type: {
       type: 'string',
-      enum: ['FeatureCollection']
+      enum: ['FeatureCollection'],
     },
     features: {
       type: 'array',
-      items: Feature
+      items: Feature,
     },
-    bbox: BoundingBox
-  }
+    bbox: BoundingBox,
+  },
 };

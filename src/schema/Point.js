@@ -1,5 +1,5 @@
-import PointCoordinates from './ref/PointCoordinates.js';
 import BoundingBox from './ref/BoundingBox.js';
+import PointCoordinates from './ref/PointCoordinates.js';
 
 export default {
   title: 'GeoJSON Point',
@@ -8,9 +8,9 @@ export default {
   properties: {
     type: {
       type: 'string',
-      enum: ['Point']
+      enum: ['Point'],
     },
     coordinates: PointCoordinates,
-    bbox: BoundingBox
-  }
+    bbox: BoundingBox,
+  },
 };
